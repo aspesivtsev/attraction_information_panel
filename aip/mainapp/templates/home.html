@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="30">
+    <link rel="stylesheet" href="{% static '/css/custom.css' %}">
+    <!-- <link href="{% static '/fonts/TTFirsNeue-Bold.ttf' %}"> -->
+    <title>Сочи Парк</title>
+</head>
+<body>
+  <img id="logo" src="{% static '/logos/sp.png' %}">
+    <h1>АТТРАКЦИОНЫ</h1>
+
+    <div class="container">
+
+    {% for attraction in attraction_list %}
+      <div class="child">
+    <div class="a-box"> 
+      {% if attraction.height %}<span class="badge_left">{{ attraction.height }}+</span>{% else%}<span class="badge_left">нет</span>{% endif %}
+      {% if attraction.age %}<span class="badge_right">{{ attraction.age }}+</span>{% else%}<span class="badge_right">нет</span>{% endif %}
+      <div class="img-container">
+        <div class="img-inner"> <img src="{{ attraction.picture.url }}"> </div>
+      </div>
+      <div class="text-container">
+        <h3>{{ attraction.name }}</h3> </div>
+      {% if attraction.info %}<div class="outsider">{{ attraction.info }}</div>{% endif %}
+    </div>
+  </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+    <div style="color: white; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">&copy; 2013 &mdash; {% now "Y" %} АО "Сочи Парк"</div>
+</body>
+</html>
+

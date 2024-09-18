@@ -1,0 +1,158 @@
+
+@font-face{
+  font-family: "TTFirsNeue-Bold";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/static/fonts/TTFirsNeue-Bold.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "TTFirsNeue-ExtraBold";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/static/fonts/TTFirsNeue-ExtraBold.ttf") format("truetype");
+}
+
+body {
+  text-align: center;
+  padding: 30px;
+  background: #0171a3;
+ 
+}
+
+h1{
+  font-family: "TTFirsNeue-ExtraBold", sans-serif;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 25px;
+  font-size: 45px;
+}
+
+#logo {
+  width: 200px;
+  /* height: 50px; */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; 
+ /*    justify-content: space-evenly;*/
+  background: #fff;
+  border-radius: 30px;
+  padding: 50px;
+
+}
+
+.child {
+/*   width: 25%; */
+  /* padding: 10px; */
+/*   box-sizing: border-box; */
+  /* margin: 30px 0 0 0; */
+/*   flex-basis: 30%; */
+  flex: 1 0 33%;
+  max-width: 33%;
+}
+
+.a-box {
+/*   display: inline-block; */
+  width: 240px;
+  text-align: center;
+}
+
+.badge_left{
+    position: relative;
+    color: #f15721;
+    background-color: #ffffff;
+/*     box-shadow: inset 0px 0px 6px 6px #E0E0E0; */
+    box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+    font-weight: bold;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: inline-block;
+/*     align-items: center; */
+/*     justify-content: center; */
+    border: 1.5px solid #f15721;
+    top: 15px;
+    left: -60px;
+    z-index: 2;
+    font-family: "TTFirsNeue-Bold", sans-serif;
+  }
+
+.badge_right{
+    font-family: "TTFirsNeue-Bold", sans-serif;
+    position: relative;
+    color: #fff;
+    background-color: #8754A3;
+/*     box-shadow: inset 0px 0px 6px 6px #E0E0E0; */
+  box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding-top: 7px;
+    font-size: 17px;
+    box-sizing: border-box;
+    display: inline-block;
+/*     align-items: center; */
+/*     justify-content: center; */
+    border: 1.5px solid #8754A3;
+    top: 15px;
+    left: 75px;
+    z-index: 2;
+  }
+
+
+.img-container {
+    height: 132px;
+    width: 230px;
+    overflow: hidden;
+/*     border-radius: 0px 0px 20px 20px; */
+    display: inline-block;
+   -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ border-radius: 15px;
+ -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+ -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+ box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
+
+.img-container img {
+/*     border-radius: 10px 10px 10px 10px; */
+/*     height: 180px; */
+    width: 230px;
+    height: 132px;
+    margin: 0px 0px 0px 0px;
+
+
+}
+
+.text-container {
+  font-family: "TTFirsNeue-Bold", sans-serif;
+/*   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2); */
+  padding: 120px 10px 10px 10px;
+  border-radius: 15px;
+  background: #f15721;
+  margin: -120px 0px 0px 0px;
+  line-height: 19px;
+  font-size: 14px;
+  color: white
+}
+
+.text-container h3 {
+  margin: 0px 0px 0px 0px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "TTFirsNeue-Bold", sans-serif;
+}
+
+.outsider {
+  color: #0171a3;
+    font-size: 11px;
+    font-family: "TTFirsNeue-Bold", sans-serif;
+}
