@@ -1,0 +1,1 @@
+# attraction_information_panel
