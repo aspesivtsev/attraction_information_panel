@@ -18,8 +18,13 @@
     {% for attraction in attraction_list %}
       <div class="child">
     <div class="a-box"> 
-      {% if attraction.height %}<span class="badge_left">{{ attraction.height }}+</span>{% else%}<span class="badge_left">-</span>{% endif %}
-      {% if attraction.age %}<span class="badge_right">{{ attraction.age }}+</span>{% else%}<span class="badge_right">-</span>{% endif %}
+      {% if attraction.height %}<span class="badge_left">{{ attraction.height }}+</span>
+      {% else%}<span class="badge_left" style="color: transparent; background-color: transparent; border: 0px;">-</span>
+      {% endif %}
+      
+      {% if attraction.age %}<span class="badge_right">{{ attraction.age }}+</span>
+      {% else%}<span class="badge_right" style="color: transparent; background-color: transparent; border: 0px;">-</span>
+      {% endif %}
       <div class="img-container">
         <div class="img-inner"> <img src="{{ attraction.picture.url }}"> </div>
       </div>
