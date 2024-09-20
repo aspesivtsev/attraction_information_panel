@@ -9,6 +9,8 @@ RUN pip install -r requirements.txt
 COPY ./aip /app
 
 WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 COPY ./entrypoint.sh /
 ENTRYPOINT ["sh", "/entrypoint.sh"]

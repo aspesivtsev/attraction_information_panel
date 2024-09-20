@@ -29,8 +29,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = os.getenv('DEBUG')
-ALLOWED_HOSTS = ['10.66.65.133', 'localhost', '127.0.0.1']
-
+#ALLOWED_HOSTS = ['10.66.65.133', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -123,6 +123,7 @@ USE_TZ = True
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
 STATIC_URL = 'static/'
+#STATIC_ROOT = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = 'media/'
