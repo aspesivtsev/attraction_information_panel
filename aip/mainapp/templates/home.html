@@ -26,7 +26,7 @@
       {% else%}<span class="badge_right" style="color: transparent; background-color: transparent; border: 0px;">-</span>
       {% endif %}
       <div class="img-container">
-        <div class="img-inner"> <img src="{{ attraction.picture.url }}"> </div>
+        <div class="img-inner">{% if attraction.picture.url %}<img src="{{ attraction.picture.url }}">{% endif %}</div>
       </div>
       <div class="text-container">
         <h3>{{ attraction.name }}</h3> </div>
