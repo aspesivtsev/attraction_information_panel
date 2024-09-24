@@ -24,8 +24,8 @@ class AttractionAdmin(admin.ModelAdmin):
 
 class ProxyAttraction(Attraction):
     class Meta:
-        verbose_name = "Аттракцион"
-        verbose_name_plural = "Аттракционы"
+        verbose_name = "Активность"
+        verbose_name_plural = "Аттракционы в работе"
         proxy = True
 
         
