@@ -1,4 +1,6 @@
+from typing import Sequence
 from django.contrib import admin
+from django.http import HttpRequest
 from .models import Attraction
 
 admin.site.site_header = "Сочи Парк"
@@ -11,13 +13,41 @@ class AttractionAdmin(admin.ModelAdmin):
     list_editable = ("active", "order")
     list_filter = ("active", )
     ordering = ("order", "name")
-    show_facets = admin.ShowFacets.ALWAYS
+    show_facets = admin.ShowFacets.ALWAYS #adding counter on active/not active attractions filter
 
+    #removing bulk actions on the multiple Attractions
     def get_actions(self, request):
         actions = super().get_actions(request)
         if 'delete_selected' in actions:
             del actions['delete_selected']
         return actions
 
-admin.site.register(Attraction, AttractionAdmin)
+class ProxyAttraction(Attraction):
+    class Meta:
+        verbose_name = "Аттракцион"
+        verbose_name_plural = "Аттракционы"
+        proxy = True
 
+        
+class MinorAttractionAdmin(admin.ModelAdmin):
+    list_display = ("name", "active",)
+    list_editable = ("active",)
+    list_filter = ("active", )
+    ordering = ("order", "name")
+    show_facets = admin.ShowFacets.ALWAYS #adding counter on active/not active attractions filter
+
+    #Removing possibility to change every Attraction on a DetailedView
+    def get_list_display_links(self, request: HttpRequest, list_display: Sequence[str]) -> Sequence[str] | None:
+        return None
+
+    #removing bulk actions on the multiple Attractions
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
+
+
+#registering models
+admin.site.register(Attraction, AttractionAdmin)
+admin.site.register(ProxyAttraction, MinorAttractionAdmin)
